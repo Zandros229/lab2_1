@@ -74,9 +74,9 @@ public class SearchResultTests {
     public void sequenceOfZeroLength() {
         int[] tabel = {};
         final int KEY = 8;
-        
-        Assertions.assertThrows(IllegalArgumentException.class, () -> BinarySearch.search(KEY, tabel));
 
+        Assertions.assertThrows(IllegalArgumentException.class, () -> BinarySearch.search(KEY, tabel));
+        
     }
 
 
