@@ -58,7 +58,13 @@ public class SearchResultTests {
     }
     @Test
     public void elementNotInSequence(){
+        int[] tabel={3,4,5,6,7};
+        final int KEY=8;
+        final int EXPECTED=-1;
 
+        SearchResult result= BinarySearch.search(KEY,tabel);
+        Assert.assertEquals(false ,result.isFound());
+        Assert.assertEquals(EXPECTED,result.getPosition());
     }
 
 
