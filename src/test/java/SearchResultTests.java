@@ -10,7 +10,7 @@ public class SearchResultTests {
     public void elementInOneElementSequence(){
         int[] tabel={6};
         final int KEY=6;
-        final int EXPECTED=-1;
+        final int EXPECTED=0;
 
         SearchResult result= BinarySearch.search(KEY,tabel);
         Assert.assertEquals(true ,result.isFound());
@@ -49,7 +49,7 @@ public class SearchResultTests {
     @Test
     public void elementIsMiddleElementOfSequence(){
         int[] tabel={3,4,5,6,7};
-        final int KEY=7;
+        final int KEY=5;
         final int EXPECTED=2;
 
         SearchResult result= BinarySearch.search(KEY,tabel);
