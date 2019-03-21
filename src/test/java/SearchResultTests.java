@@ -1,7 +1,6 @@
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 
 
 public class SearchResultTests {
@@ -13,8 +12,8 @@ public class SearchResultTests {
         final int EXPECTED = 0;
 
         SearchResult result = BinarySearch.search(KEY, tabel);
-        Assert.assertEquals(true, result.isFound());
-        Assert.assertEquals(EXPECTED, result.getPosition());
+        Assertions.assertEquals(true, result.isFound());
+        Assertions.assertEquals(EXPECTED, result.getPosition());
     }
 
     @Test
@@ -24,8 +23,8 @@ public class SearchResultTests {
         final int EXPECTED = -1;
 
         SearchResult result = BinarySearch.search(KEY, tabel);
-        Assert.assertEquals(false, result.isFound());
-        Assert.assertEquals(EXPECTED, result.getPosition());
+        Assertions.assertEquals(false, result.isFound());
+        Assertions.assertEquals(EXPECTED, result.getPosition());
     }
 
     @Test
@@ -35,8 +34,8 @@ public class SearchResultTests {
         final int EXPECTED = 0;
 
         SearchResult result = BinarySearch.search(KEY, tabel);
-        Assert.assertEquals(true, result.isFound());
-        Assert.assertEquals(EXPECTED, result.getPosition());
+        Assertions.assertEquals(true, result.isFound());
+        Assertions.assertEquals(EXPECTED, result.getPosition());
     }
 
     @Test
@@ -46,8 +45,8 @@ public class SearchResultTests {
         final int EXPECTED = tabel.length - 1;
 
         SearchResult result = BinarySearch.search(KEY, tabel);
-        Assert.assertEquals(true, result.isFound());
-        Assert.assertEquals(EXPECTED, result.getPosition());
+        Assertions.assertEquals(true, result.isFound());
+        Assertions.assertEquals(EXPECTED, result.getPosition());
     }
 
     @Test
@@ -57,8 +56,8 @@ public class SearchResultTests {
         final int EXPECTED = 2;
 
         SearchResult result = BinarySearch.search(KEY, tabel);
-        Assert.assertEquals(true, result.isFound());
-        Assert.assertEquals(EXPECTED, result.getPosition());
+        Assertions.assertEquals(true, result.isFound());
+        Assertions.assertEquals(EXPECTED, result.getPosition());
     }
 
     @Test
@@ -68,8 +67,16 @@ public class SearchResultTests {
         final int EXPECTED = -1;
 
         SearchResult result = BinarySearch.search(KEY, tabel);
-        Assert.assertEquals(false, result.isFound());
-        Assert.assertEquals(EXPECTED, result.getPosition());
+        Assertions.assertEquals(false, result.isFound());
+        Assertions.assertEquals(EXPECTED, result.getPosition());
+    }
+    @Test
+    public void sequenceOfZeroLength() {
+        int[] tabel = {};
+        final int KEY = 8;
+        
+        Assertions.assertThrows(IllegalArgumentException.class, () -> BinarySearch.search(KEY, tabel));
+
     }
 
 
