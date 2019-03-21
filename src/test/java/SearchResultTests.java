@@ -48,7 +48,13 @@ public class SearchResultTests {
     }
     @Test
     public void elementIsMiddleElementOfSequence(){
+        int[] tabel={3,4,5,6,7};
+        final int KEY=7;
+        final int EXPECTED=2;
 
+        SearchResult result= BinarySearch.search(KEY,tabel);
+        Assert.assertEquals(true ,result.isFound());
+        Assert.assertEquals(EXPECTED,result.getPosition());
     }
     @Test
     public void elementNotInSequence(){
