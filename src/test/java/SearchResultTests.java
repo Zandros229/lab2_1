@@ -38,7 +38,13 @@ public class SearchResultTests {
     }
     @Test
     public void elementIsLastElementOfSequence(){
+        int[] tabel={4,5,6,7};
+        final int KEY=7;
+        final int EXPECTED=tabel.length-1;
 
+        SearchResult result= BinarySearch.search(KEY,tabel);
+        Assert.assertEquals(true ,result.isFound());
+        Assert.assertEquals(EXPECTED,result.getPosition());
     }
     @Test
     public void elementIsMiddleElementOfSequence(){
