@@ -70,13 +70,14 @@ public class SearchResultTests {
         Assertions.assertEquals(false, result.isFound());
         Assertions.assertEquals(EXPECTED, result.getPosition());
     }
+
     @Test
     public void sequenceOfZeroLength() {
         int[] tabel = {};
         final int KEY = 8;
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> BinarySearch.search(KEY, tabel));
-        
+
     }
 
 
